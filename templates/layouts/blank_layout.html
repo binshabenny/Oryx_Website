@@ -26,38 +26,39 @@
 
 		<!-- Start Header/Navigation -->
 		{% block navbar %} 
-        {% include 'layouts/navbar.html'%}
         {% endblock %}
 		<!-- End Header/Navigation -->
 
+		{% block about_us %} 
+		
+		{% endblock %}	
+		{% block contact_us %} 
+		
+		{% endblock %}		
+
 		<!-- Start Hero Section -->
         {% block hero %} 
-        {% include 'layouts/hero_section.html'%}
         {% endblock %}
 		<!-- End Hero Section -->
 
 		<!-- Start Product Section -->
 		{% block product %} 
-        {% include 'layouts/product_pic.html'%}
         {% endblock %}
 		<!-- End Product Section -->
 
 		<!-- Start Why Choose Us Section -->
 		{% block quality %} 
-        {% include 'layouts/quality.html'%}
         {% endblock %}
 		<!-- End Why Choose Us Section -->
 
 		<!-- Start We Help Section -->
 		{% block help %} 
-        {% include 'layouts/help.html'%}
         {% endblock %}
 		<!-- End We Help Section -->
 
 		<!-- Start Popular Product -->
 		
         {% block popular_products %} 
-        {% include 'layouts/popular_pdt.html'%}
         {% endblock %}
 		<!-- End Popular Product -->
 
@@ -73,7 +74,6 @@
 
 		<!-- Start Footer Section -->
 		{% block footer %} 
-        {% include 'layouts/footer.html'%}
         {% endblock %}
 		<!-- End Footer Section -->	
 
