@@ -112,6 +112,34 @@ a {
 						width: calc(100% - 16px);
 					}
 				}
+				// Dropdown styles
+				&.dropdown {
+					.nav-link {
+						padding-right: 1.5rem;
+						padding-left: 1.5rem;
+						&:after {
+							content: "\f078"; /* Unicode for dropdown arrow */
+							font-family: 'FontAwesome'; /* Use FontAwesome for icon */
+							padding-left: 0.5rem;
+						}
+					}
+					.dropdown-menu {
+						background-color: $yellow; /* Ensure $yellow is defined */
+						border: 1px solid $secondary; /* Ensure $secondary is defined */
+						box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+						border-radius: .25rem;
+						padding: .5rem 0;
+						.dropdown-item {
+							color: $green; /* Ensure $green is defined */
+							padding: .75rem 1.25rem;
+							&:hover {
+								background-color: #0f5132!important; /* Optionally adjust hover color */
+								color: $white;
+							}
+						}
+					}
+				}
+				
 			}
 		}
 	}

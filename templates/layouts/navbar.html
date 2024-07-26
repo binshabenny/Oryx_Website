@@ -2,7 +2,7 @@
 <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
     <div class="container">
-        <a class="navbar-brand" href="index.html">Oryx<span>.</span></a>
+        <a class="navbar-brand" href="index.html">ORYX 	اوركس<span>.</span></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,8 +14,20 @@
                     <a class="nav-link" href="{% url 'home'%}">Home</a>
                 </li>
                 <li><a class="nav-link" href="{% url 'about_page'%}">About us</a></li>
-                <li><a class="nav-link" href="services.html">Collections</a></li>
-                <li><a class="nav-link" href="{% url 'contact_page'%}">Contact us</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Collections
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle " href="#">Men's Collection</a>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle " href="#">Kid's Collection</a>
+                        </li>
+                    </ul>
+                </li>              
+                  <li><a class="nav-link" href="{% url 'contact_page'%}">Contact us</a></li>
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
