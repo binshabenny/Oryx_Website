@@ -4,7 +4,8 @@ from .models import Product
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    products = Product.objects.all().order_by('-priority')[:3]
+    return render(request,'index.html', {'products': products})
 
 def about(request):
     return render(request,'about.html')

@@ -8,7 +8,6 @@
                 <div class="intro-excerpt">
                     <h1> <span clsas="d-block"> {{ category|title }} Collections
                     </span></h1>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -23,115 +22,54 @@
 {% block content %}
 
     <!-- Shop Details Section Begin -->
-    <section class="shop-details">
-        <div class="product__details__pic">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="product__details__breadcrumb">
-                            <a href="{% url 'home'%}">Home</a>
-                            <span>Product Details</span>
-                        </div>
-                    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Main Image and Sub-Image Gallery -->
+            <div class="col-lg-6">
+                <div class="product-main-image">
+                    {% if product.image_1 %}
+                        <img id="mainImage" src="{{ product.main_image.url }}" alt="Main Image">
+                    {% endif %}
                 </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-9">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-2.png" alt="">
-                                </div>
+                <div class="product-image-gallery mt-3">
+                    <div class="row">
+                        {% if product.image_1 %}
+                            <div class="col-3 sub-image-container">
+                                <img class="sub-image" src="{{ product.image_1.url }}" alt="Sub Image 1" data-target="#mainImage">
                             </div>
-                        </div>
+                        {% endif %}
+                        {% if product.image_2 %}
+                            <div class="col-3 sub-image-container">
+                                <img class="sub-image" src="{{ product.image_2.url }}" alt="Sub Image 2" data-target="#mainImage">
+                            </div>
+                        {% endif %}
+                        {% if product.image_3 %}
+                            <div class="col-3 sub-image-container">
+                                <img class="sub-image" src="{{ product.image_3.url }}" alt="Sub Image 3" data-target="#mainImage">
+                            </div>
+                        {% endif %}
+                        {% if product.image_4 %}
+                            <div class="col-3 sub-image-container">
+                                <img class="sub-image" src="{{ product.image_4.url }}" alt="Sub Image 4" data-target="#mainImage">
+                            </div>
+                        {% endif %}
                     </div>
+                    
                 </div>
             </div>
-        </div>
-        <div class="product__details__content">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="product__details__text">
-                            <h4>Hooded thermal anorak</h4>
-                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                            with placket.</p>
-                            <div class="product__details__option">
-                                <div class="product__details__option__size">
-                                    <span>Size:</span>
-                                    <label for="xxl">xxl
-                                        <input type="radio" id="xxl">
-                                    </label>
-                                    <label class="active" for="xl">xl
-                                        <input type="radio" id="xl">
-                                    </label>
-                                    <label for="l">l
-                                        <input type="radio" id="l">
-                                    </label>
-                                    <label for="sm">s
-                                        <input type="radio" id="sm">
-                                    </label>
-                                </div>
-                                <div class="product__details__option__color">
-                                    <span>Color:</span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="product__details__tab">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5"
-                                    role="tab">Description</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Customer
-                                    Previews(5)</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Additional
-                                    information</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <!-- Product Details -->
+            <div class="col-lg-6">
+                <h2>{{ product.title }}</h2>
+                <p class="product-description">{{ product.description }}</p>
+                <ul class="product-details">
+                    <li><strong>Color:</strong> {{ product.color }}</li>
+                    <li><strong>Size:</strong> {{ product.size }}</li>
+                    <li><strong>Packing:</strong> {{ product.packing }}</li>
+                </ul>
+                
             </div>
         </div>
-    </section>
+    </div>
     {% endblock %}
     {% block footer %} 
     {% include 'layouts/footer.html'%}
