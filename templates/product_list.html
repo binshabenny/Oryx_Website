@@ -1,0 +1,49 @@
+
+{% extends 'layouts/blank_layout.html'%}
+{% load static %}
+{% block hero_product %} 
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1> <span clsas="d-block"> {{ category|title }} Collections
+                    </span></h1>
+                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap">
+                    <img src="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+		
+{% block content %}
+  <div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+      <div class="row">
+        {% for product in products %}
+          <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <a class="product-item" href="{% url 'product_details' product.id %}">
+              <!-- Check if main_image and title are rendering correctly -->
+              <img src="{{ product.main_image.url }}" alt="{{ product.title }}" class="img-fluid product-thumbnail">
+              <h3 class="product-title">{{ product.title }}</h3>
+              <strong class="product-price">Product ID:{{ product.product_id}}</strong>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+		
+		{% block footer %} 
+		{% include 'layouts/footer.html'%}
+		{% endblock %}
